@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { expiryLabel, daysLeft } from "@/lib/coupons";
-import { getActiveCoupons } from "@/lib/data";
-import { STORES, storeById } from "@/lib/sample-data";
+import { getActiveCoupons, getStores } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ store?: string }> }) {
   const { store } = await searchParams;
+  const stores = await getStores();
+  const storeById = (id: string) => stores.find((s) => s.id === id);
   const selected = store && storeById(store) ? store : undefined;
   const coupons = await getActiveCoupons(selected);
 
@@ -18,7 +19,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
 
       <nav aria-label="Filter by store" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
         <StoreChip href="/" label="All stores" active={!selected} />
-        {STORES.map((s) => (
+        {stores.map((s) => (
           <StoreChip key={s.id} href={`/?store=${s.id}`} label={s.name} active={selected === s.id} />
         ))}
       </nav>
@@ -34,7 +35,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
       ) : (
         <ul className="flex flex-col gap-3">
           {coupons.map((c) => {
-            const s = storeById(c.storeId)!;
+            const s = storeById(c.storeId);
+            if (!s) return null;
             const soon = daysLeft(c) <= 3;
             return (
               <li key={c.id}>
