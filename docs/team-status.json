@@ -1,19 +1,102 @@
 {
-  "updated_at": "2026-11-22T21:55:00Z",
-  "current_feature": "Getting the team set up in the new code repository",
+  "updated_at": "2026-11-22T21:57:15Z",
+  "current_feature": "Feature 1: app skeleton (sample coupons, scannable barcodes, expiry rules)",
   "agents": [
-    {"id": "project-manager", "status": "working", "task": "Adding the team files to the code repository", "since": "2026-11-22T21:44:00Z"},
-    {"id": "market-researcher", "status": "idle", "task": "Joined the team; starting from the market study", "since": "2026-11-22T21:55:00Z"},
-    {"id": "product-planner", "status": "idle", "task": "Waiting for the first feature: project setup", "since": "2026-11-22T21:11:00Z"},
-    {"id": "backend-dev", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"},
-    {"id": "frontend-dev", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"},
-    {"id": "qa-tester", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"},
-    {"id": "code-reviewer", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"}
+    {
+      "id": "project-manager",
+      "status": "waiting",
+      "task": "Waiting for kyle to review pull requests #1 and #2",
+      "since": "2026-11-22T21:57:15Z",
+      "pr": "https://github.com/kylegolle1/coupon-connect/pull/2"
+    },
+    {
+      "id": "market-researcher",
+      "status": "idle",
+      "task": "Ready for research questions",
+      "since": "2026-11-22T21:57:15Z"
+    },
+    {
+      "id": "product-planner",
+      "status": "done",
+      "task": "Planned feature 1: app skeleton",
+      "since": "2026-11-22T21:57:15Z"
+    },
+    {
+      "id": "backend-dev",
+      "status": "done",
+      "task": "Wrote coupon rules and the database layout",
+      "since": "2026-11-22T21:57:15Z"
+    },
+    {
+      "id": "frontend-dev",
+      "status": "done",
+      "task": "Built the coupon list and barcode screens",
+      "since": "2026-11-22T21:57:15Z"
+    },
+    {
+      "id": "qa-tester",
+      "status": "done",
+      "task": "14 automated checks pass, including barcodes scanning back correctly",
+      "since": "2026-11-22T21:57:15Z"
+    },
+    {
+      "id": "code-reviewer",
+      "status": "done",
+      "task": "Reviewed feature 1: ready for kyle",
+      "since": "2026-11-22T21:57:15Z",
+      "pr": "https://github.com/kylegolle1/coupon-connect/pull/2"
+    }
   ],
   "activity": [
-    {"at": "2026-11-22T21:55:00Z", "agent": "market-researcher", "text": "kyle added a market researcher to study competitor apps and what shoppers want."},
-    {"at": "2026-11-22T21:44:00Z", "agent": "project-manager", "text": "kyle asked for a project manager to oversee the team."},
-    {"at": "2026-11-22T21:41:00Z", "agent": "project-manager", "text": "The code repository coupon-connect was created and connected."},
-    {"at": "2026-11-22T21:11:00Z", "agent": "product-planner", "text": "The team's rulebook and first to-do list were written."}
+    {
+      "at": "2026-11-22T21:57:15Z",
+      "agent": "project-manager",
+      "text": "Opened pull request #2: feature 1, the app skeleton."
+    },
+    {
+      "at": "2026-11-22T21:57:15Z",
+      "agent": "backend-dev",
+      "text": "Coupon rules and database layout are done. Expired coupons never show."
+    },
+    {
+      "at": "2026-11-22T21:57:15Z",
+      "agent": "frontend-dev",
+      "text": "Coupon list and barcode screens are built in the prototype colours."
+    },
+    {
+      "at": "2026-11-22T21:57:15Z",
+      "agent": "qa-tester",
+      "text": "All 14 checks passed, and every sample barcode scans back to the right number."
+    },
+    {
+      "at": "2026-11-22T21:54:11Z",
+      "agent": "project-manager",
+      "text": "Opened pull request #1 with the team files for kyle to approve."
+    },
+    {
+      "at": "2026-11-22T21:54:11Z",
+      "agent": "frontend-dev",
+      "text": "Started building the app skeleton from the prototype design."
+    },
+    {
+      "at": "2026-11-22T21:55:00Z",
+      "agent": "market-researcher",
+      "text": "kyle added a market researcher to study competitor apps and what shoppers want."
+    },
+    {
+      "at": "2026-11-22T21:44:00Z",
+      "agent": "project-manager",
+      "text": "kyle asked for a project manager to oversee the team."
+    },
+    {
+      "at": "2026-11-22T21:41:00Z",
+      "agent": "project-manager",
+      "text": "The code repository coupon-connect was created and connected."
+    },
+    {
+      "at": "2026-11-22T21:11:00Z",
+      "agent": "product-planner",
+      "text": "The team's rulebook and first to-do list were written."
+    }
   ]
 }
