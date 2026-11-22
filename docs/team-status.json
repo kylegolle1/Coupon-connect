@@ -1,0 +1,19 @@
+{
+  "updated_at": "2026-11-22T21:55:00Z",
+  "current_feature": "Getting the team set up in the new code repository",
+  "agents": [
+    {"id": "project-manager", "status": "working", "task": "Adding the team files to the code repository", "since": "2026-11-22T21:44:00Z"},
+    {"id": "market-researcher", "status": "idle", "task": "Joined the team; starting from the market study", "since": "2026-11-22T21:55:00Z"},
+    {"id": "product-planner", "status": "idle", "task": "Waiting for the first feature: project setup", "since": "2026-11-22T21:11:00Z"},
+    {"id": "backend-dev", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"},
+    {"id": "frontend-dev", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"},
+    {"id": "qa-tester", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"},
+    {"id": "code-reviewer", "status": "idle", "task": "Nothing assigned yet", "since": "2026-11-22T21:11:00Z"}
+  ],
+  "activity": [
+    {"at": "2026-11-22T21:55:00Z", "agent": "market-researcher", "text": "kyle added a market researcher to study competitor apps and what shoppers want."},
+    {"at": "2026-11-22T21:44:00Z", "agent": "project-manager", "text": "kyle asked for a project manager to oversee the team."},
+    {"at": "2026-11-22T21:41:00Z", "agent": "project-manager", "text": "The code repository coupon-connect was created and connected."},
+    {"at": "2026-11-22T21:11:00Z", "agent": "product-planner", "text": "The team's rulebook and first to-do list were written."}
+  ]
+}
