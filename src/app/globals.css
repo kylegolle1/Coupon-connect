@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Colours and fonts follow the clickable prototype. */
+:root {
+  --bg: #e9edf4;
+  --surface: #ffffff;
+  --surface-2: #f4f6fa;
+  --ink: #15203b;
+  --muted: #5a6479;
+  --line: #d3d9e4;
+  --accent: #ffcb2f;
+  --accent-ink: #15203b;
+  --brand: #2149c9;
+  --warn: #a24c06;
+  --warn-soft: #fdebd6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1424;
+    --surface: #182036;
+    --surface-2: #1f2842;
+    --ink: #eef1f8;
+    --muted: #a3acc2;
+    --line: #2e3955;
+    --brand: #8ea8ff;
+    --warn: #ffb36b;
+    --warn-soft: #3f2a14;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-brand: var(--brand);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bricolage);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}

@@ -58,4 +58,13 @@ Key facts: expired/broken coupons are shoppers' top frustration (26%), "too many
 and digital-only coupons are criticised for leaving out seniors and lower-income shoppers.
 
 ## Commands
-(Filled in by the first agent that sets up the project, e.g. `npm run dev`, `npm test`.)
+- `npm install` — install everything (first time only)
+- `npm run dev` — run the app at http://localhost:3000
+- `npm test` — run the automated tests (includes barcode scan checks)
+- `npm run lint` and `npx tsc --noEmit` — code style and type checks
+- `npm run build` — production build
+
+## Where things live
+- `src/app/` — screens (`page.tsx` = coupon list, `coupon/[id]/page.tsx` = barcode screen)
+- `src/lib/` — coupon rules (`coupons.ts`), barcode rules (`barcode.ts`), data (`data.ts`, `sample-data.ts`)
+- `supabase/migrations/` — database layout (not applied yet)
