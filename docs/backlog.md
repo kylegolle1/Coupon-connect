@@ -1,5 +1,8 @@
 # Backlog (kept up to date by product-planner)
 
+## kyle's chosen flow (2026-11-23)
+Open app → sign in → pick a store → pick the item → barcode if a discount exists, otherwise "No discount right now". ✅ built in PR #4.
+
 ## First version (GUESS — reorder as you like)
 1. Project setup: app skeleton ✅ (PR #2), database layout ✅ written, database connection ✅ code in PR #3 (needs anon key + schema run in Supabase), sign-in ⏳ next.
 2. Store portal: store staff create a coupon with a barcode and expiry date.

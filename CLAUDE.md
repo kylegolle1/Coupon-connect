@@ -63,9 +63,11 @@ and digital-only coupons are criticised for leaving out seniors and lower-income
 - `npm test` — run the automated tests (includes barcode scan checks)
 - `npm run lint` and `npx tsc --noEmit` — code style and type checks
 - `npm run build` — production build
+- In the Claude cloud workspace, start the server with `NODE_USE_ENV_PROXY=1` so it can reach Supabase through the proxy.
 
 ## Where things live
-- `src/app/` — screens (`page.tsx` = coupon list, `coupon/[id]/page.tsx` = barcode screen)
+- `src/app/` — screens: `login/` (email sign-in link), `page.tsx` (pick a store), `store/[id]/` (pick an item, search), `coupon/[id]/` (barcode)
+- `src/middleware.ts` — sends signed-out shoppers to /login (only when Supabase is configured)
 - `src/lib/` — coupon rules (`coupons.ts`), barcode rules (`barcode.ts`), data (`data.ts`, `sample-data.ts`)
 - `supabase/migrations/` — database layout; `supabase/seed.sql` — sample stores and coupons
 - `src/lib/supabase.ts` — database connection (uses `.env.local`; falls back to sample data)
