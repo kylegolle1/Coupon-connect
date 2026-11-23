@@ -10,6 +10,13 @@ export const STORES: Store[] = [
   { id: "northside", name: "Northside Market", color: "#2149c9" },
   { id: "bright", name: "BrightHome Goods", color: "#7c3aed" },
   { id: "tandem", name: "Tandem Pharmacy", color: "#0e7490" },
+].map((s) => ({ ...s, isDemo: true }));
+
+/** Real chains: we only link to each store's own coupon page. */
+export const REAL_STORES: Store[] = [
+  { id: "kroger", name: "Kroger", color: "#1d4ed8", couponsUrl: "https://www.kroger.com/savings/cl/coupons/" },
+  { id: "safeway", name: "Safeway", color: "#b91c1c", couponsUrl: "https://www.safeway.com/foru/coupons-deals.html" },
+  { id: "target", name: "Target", color: "#be123c", couponsUrl: "https://www.target.com/circle" },
 ];
 
 const DAY = 24 * 60 * 60 * 1000;
@@ -51,5 +58,5 @@ export function sampleCoupons(now: Date = new Date()): Coupon[] {
 }
 
 export function storeById(id: string): Store | undefined {
-  return STORES.find((s) => s.id === id);
+  return [...STORES, ...REAL_STORES].find((s) => s.id === id);
 }

@@ -9,3 +9,5 @@
 - 2026-11-23 — Sign-in uses an emailed one-tap link instead of a password: nothing to forget, and fewer support problems. (GUESS, easy to change.)
 - 2026-11-23 — A store's item list shows only items with a live discount; searching for anything else says "No discount right now". We have no full product catalogue from stores yet. (GUESS.)
 - 2026-11-23 — With no Supabase settings, the app runs in sample mode with no sign-in, so developers and tests can use it.
+- 2026-11-23 — kyle's rule: only real, legal deals. Real chains (Kroger, Safeway, Target, CVS, Walgreens) get a button to their OWN coupon page; we copy nothing from their sites. Online promo codes will come only from a licensed feed (LinkMyDeals free plan first). Barcodes only from stores that sign up. Source: "Where Coupon Connect can get real coupons" research.
+- 2026-11-23 — The made-up sample stores are marked demo and hidden from shoppers (not deleted). Set NEXT_PUBLIC_SHOW_DEMO=1 to see them.
