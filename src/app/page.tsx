@@ -31,7 +31,11 @@ export default async function Home() {
                   <span className="flex flex-1 flex-col gap-0.5">
                     <b className="text-[17px]">{s.name}</b>
                     <span className="text-sm text-muted">
-                      {n === 0 ? "No discounts right now" : `${n} item${n === 1 ? "" : "s"} on discount`}
+                      {n > 0
+                        ? `${n} item${n === 1 ? "" : "s"} to scan at the register`
+                        : s.couponsUrl
+                          ? "Opens the store's own coupons"
+                          : "No discounts right now"}
                     </span>
                   </span>
                   <span aria-hidden className="text-[26px] text-brand">

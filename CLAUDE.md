@@ -32,6 +32,11 @@ Two sides:
    compared on the server.
 7. **Accessibility and cheap phones.** Must work on a small, older Android phone on slow data.
    Large tap targets, readable contrast, works offline for saved coupons.
+9. **Only real, legal deals (kyle's rule).** Never copy coupons, barcodes or deal lists from store or
+   brand websites, and never show a barcode we didn't get from the coupon's owner (that's
+   counterfeiting). Allowed: links to a store's own coupon page/app, online codes from a licensed
+   feed (e.g. LinkMyDeals) with a commission notice, and barcodes from stores that sign up with us.
+   Don't use store logos or suggest a store endorses us. Shopper-shared deals: text and links only.
 8. **Write down decisions** in `docs/decisions.md` (date, decision, why) and the feature
    backlog in `docs/backlog.md`.
 
