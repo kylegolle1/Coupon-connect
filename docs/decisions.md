@@ -4,3 +4,4 @@
 - 2026-11-22 — Supabase for database and sign-in — free tier, handles store/shopper permissions. (GUESS.)
 - 2026-11-22 — Barcodes are drawn on the server as SVG with bwip-js, so they look sharp and need no extra download on the phone.
 - 2026-11-22 — Expired coupons are filtered on the server and in the database rules; an expired coupon's page shows "not available" instead of a barcode.
+- 2026-11-22 — The app reads from Supabase when its URL and public key are set, and falls back to sample data otherwise, so it always runs during development.

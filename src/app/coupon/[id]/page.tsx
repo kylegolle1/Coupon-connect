@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import bwipjs from "bwip-js/node";
 import { bwipOptions } from "@/lib/barcode";
 import { expiryLabel } from "@/lib/coupons";
-import { getActiveCoupon } from "@/lib/data";
-import { storeById } from "@/lib/sample-data";
+import { getActiveCoupon, getStores } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
@@ -13,7 +12,8 @@ export default async function CouponPage({ params }: { params: Promise<{ id: str
   const coupon = await getActiveCoupon(id);
   // Expired or unknown coupons are treated as not found, so they can never be scanned.
   if (!coupon) notFound();
-  const store = storeById(coupon.storeId)!;
+  const store = (await getStores()).find((s) => s.id === coupon.storeId);
+  if (!store) notFound();
   const svg = bwipjs.toSVG(bwipOptions(coupon.barcodeValue, coupon.barcodeFormat));
 
   return (

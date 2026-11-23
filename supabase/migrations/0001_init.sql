@@ -52,13 +52,13 @@ create policy "public reads live coupons" on coupons for select
   using (starts_at <= now() and now() < ends_at);
 
 -- Store staff can see and manage only their own store's coupons.
-create policy "staff read own coupons" on coupons for select
+create policy "staff read own coupons" on coupons for select to authenticated
   using (exists (select 1 from store_members m where m.store_id = coupons.store_id and m.user_id = auth.uid()));
-create policy "staff write own coupons" on coupons for all
+create policy "staff write own coupons" on coupons for all to authenticated
   using (exists (select 1 from store_members m where m.store_id = coupons.store_id and m.user_id = auth.uid()))
   with check (exists (select 1 from store_members m where m.store_id = coupons.store_id and m.user_id = auth.uid()));
-create policy "staff see own membership" on store_members for select using (user_id = auth.uid());
+create policy "staff see own membership" on store_members for select to authenticated using (user_id = auth.uid());
 
 -- Shoppers manage only their own wallet.
-create policy "own wallet" on saved_coupons for all
+create policy "own wallet" on saved_coupons for all to authenticated
   using (user_id = auth.uid()) with check (user_id = auth.uid());

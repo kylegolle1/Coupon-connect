@@ -67,4 +67,9 @@ and digital-only coupons are criticised for leaving out seniors and lower-income
 ## Where things live
 - `src/app/` — screens (`page.tsx` = coupon list, `coupon/[id]/page.tsx` = barcode screen)
 - `src/lib/` — coupon rules (`coupons.ts`), barcode rules (`barcode.ts`), data (`data.ts`, `sample-data.ts`)
-- `supabase/migrations/` — database layout (not applied yet)
+- `supabase/migrations/` — database layout; `supabase/seed.sql` — sample stores and coupons
+- `src/lib/supabase.ts` — database connection (uses `.env.local`; falls back to sample data)
+
+## Supabase
+Project: https://khkjwmjtfqieniobcmoi.supabase.co. Schema changes are applied by pasting the
+migration SQL into Supabase's SQL Editor (the public key can't change tables). Never commit keys.
