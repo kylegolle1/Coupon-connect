@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import Link from "next/link";
+import { getSignedInEmail } from "@/lib/supabase-server";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -17,18 +18,26 @@ export const viewport: Viewport = {
   themeColor: "#ffcb2f",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const email = await getSignedInEmail();
   return (
     <html lang="en">
       <body className={`${inter.variable} ${bricolage.variable} font-sans antialiased`}>
         <div className="mx-auto min-h-screen max-w-[480px]">
-          <header className="sticky top-0 z-10 border-b border-line bg-surface px-4 py-3">
+          <header className="sticky top-0 z-10 flex items-center justify-between gap-2 border-b border-line bg-surface px-4 py-3">
             <Link href="/" className="flex items-center gap-2 font-display text-[22px] font-extrabold tracking-tight">
               <span className="grid h-7 w-7 -rotate-6 place-items-center rounded-md bg-accent text-[15px] text-accent-ink" aria-hidden>
                 %
               </span>
               Coupon Connect
             </Link>
+            {email && (
+              <form action="/signout" method="post">
+                <button type="submit" className="min-h-[44px] px-2 text-sm font-semibold text-brand">
+                  Sign out
+                </button>
+              </form>
+            )}
           </header>
           {children}
         </div>

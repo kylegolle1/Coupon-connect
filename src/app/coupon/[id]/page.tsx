@@ -18,8 +18,8 @@ export default async function CouponPage({ params }: { params: Promise<{ id: str
 
   return (
     <main className="flex flex-col gap-4 px-4 pb-12 pt-4">
-      <Link href="/" className="flex min-h-[44px] w-fit items-center text-sm font-semibold text-brand">
-        ← All coupons
+      <Link href={`/store/${store.id}`} className="flex min-h-[44px] w-fit items-center text-base font-semibold text-brand">
+        ‹ {store.name}
       </Link>
       <p className="text-[13px] font-semibold text-muted">{store.name}</p>
       <h1 className="font-display text-[32px] font-extrabold leading-none tracking-tight">{coupon.value}</h1>
