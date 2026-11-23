@@ -35,7 +35,9 @@ create table if not exists promo_codes (
 create index if not exists promo_codes_live_idx on promo_codes (store_id, ends_at);
 
 alter table promo_codes enable row level security;
-drop policy if exists "public reads live promo codes" on promo_codes;
-create policy "public reads live promo codes" on promo_codes for select
-  using (starts_at <= now() and now() < ends_at);
+do $$ begin
+  create policy "public reads live promo codes" on promo_codes for select
+    using (starts_at <= now() and now() < ends_at);
+exception when duplicate_object then null;
+end $$;
 grant select on promo_codes to anon, authenticated;
